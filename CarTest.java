@@ -22,49 +22,45 @@ public class CarTest {
     /** tests the coordinates of the car on x and y-axis
     *   moves the car by an amount based on its relative speed
     * */
-    private static void volvoPointLocation(){
-        Volvo240 car = new Volvo240();
-        car.startEngine();
-        car.gas(1);
-        System.out.println("Facing North," + " x position = " + car.getPosX() + "," + " y position = " + car.getPosY());
-        car.turnLeft();
-        car.move();
-        System.out.println("x position = " + car.getPosX() + "," + " y position = " + car.getPosY());
-        car.turnLeft();
-        car.move();
-        System.out.println("x position = " + car.getPosX() + "," + " y position = " + car.getPosY());
-        car.turnLeft();
-        car.move();
-        System.out.println("x position = " + car.getPosX() + "," + " y position = " + car.getPosY());
-        car.turnLeft();
-        car.move();
-        System.out.println("x position = " + car.getPosX() + "," + " y position = " + car.getPosY());
-    }
 
-    private static  void saabPointLocation(){
-        Saab95 car = new Saab95();
-        car.setTurboOn();
-        car.startEngine();
-        car.gas(1);
-        System.out.println("Facing North," + " x position = " + car.getPosX() + "," + " y position = " + car.getPosY());
-        car.turnLeft();
-        car.move();
-        System.out.println("x position = " + car.getPosX() + "," + " y position = " + car.getPosY());
-        car.turnLeft();
-        car.move();
-        System.out.println("x position = " + car.getPosX() + "," + " y position = " + car.getPosY());
-        car.turnLeft();
-        car.move();
-        System.out.println("x position = " + car.getPosX() + "," + " y position = " + car.getPosY());
-        car.turnLeft();
-        car.move();
-        System.out.println("x position = " + car.getPosX() + "," + " y position = " + car.getPosY());
+    private static void carPointLocation(){
+        Volvo240 volvo = new Volvo240();
+        Saab95 saab = new Saab95();
+        volvo.startEngine();
+        volvo.gas(1);
+        System.out.println("Volvo Facing North," + " x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
+        volvo.turnLeft();
+        volvo.move();
+        System.out.println("x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
+        volvo.turnLeft();
+        volvo.move();
+        System.out.println("x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
+        volvo.turnLeft();
+        volvo.move();
+        System.out.println("x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
+        volvo.turnLeft();
+        volvo.move();
+        System.out.println("x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
+        saab.startEngine();
+        saab.gas(1);
+        System.out.println("Saab Facing North," + " x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
+        saab.turnRight();
+        saab.move();
+        System.out.println("x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
+        saab.turnRight();
+        saab.move();
+        System.out.println("x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
+        saab.turnRight();
+        saab.move();
+        System.out.println("x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
+        saab.turnRight();
+        saab.move();
+        System.out.println("x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
     }
 
     static void main() {
         testTurbo();
-        volvoPointLocation();
-        saabPointLocation();
+        carPointLocation();
         //TODO: add and run more test
     }
 }
