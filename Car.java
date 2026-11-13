@@ -35,22 +35,14 @@ public abstract class Car implements Movable {
     public int getNrDoors() {
         return nrDoors;
     }
-    public double getEnginePower() {
-        if (currentSpeed == 0)
-        {
-            return -1;
-        }
-        else {
-            return enginePower;
-        }
-    }
-    public double getCurrentSpeed() {return currentSpeed;};
+    public double getEnginePower() { return enginePower; }
+    boolean stillValid;
+    public double getCurrentSpeed() {
+        return currentSpeed;}
     public Color getColor() { return color; }
     public void setColor(Color clr) { color = clr; }
     public void startEngine() { currentSpeed = 0.1; }
-    public void stopEngine() {
-        currentSpeed = 0;
-    }
+    public void stopEngine() { currentSpeed = 0; }
     public int getDirection() { return direction; }
     public double getPosX() { return posX; }
     public double getPosY() { return posY; }
@@ -64,18 +56,27 @@ public abstract class Car implements Movable {
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
 
+
+    private  double currentGas = 0.0;
     // public because this is how a user would change the speed of the car
     public void gas(double amount) {
         if(amount < 0.0 || amount > 1){
-            System.out.println("NOOOO");
+            System.out.println("NOOOO " + amount + " is Invalid");
         }
-        else {
-            System.out.println("YEEEEES");
+        else{
+            System.out.println("YEEEEES " + amount + " is Valid");
             incrementSpeed(amount);
         }
     }
+
     public void brake(double amount) {
-        decrementSpeed(amount);
+        if(amount < 0.0 || amount > 1){
+            System.out.println("NOOOO " + amount + " is  Invalid");
+        }
+        else{
+            System.out.println("YEEEEES " + amount + " is  Valid");
+            decrementSpeed(amount);
+        }
     }
 
     @Override
