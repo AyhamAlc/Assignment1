@@ -18,6 +18,12 @@ public class CarTest {
         System.out.println("No turbo: " + slowSaab.getCurrentSpeed() +", Turbo: " + fastSaab.getCurrentSpeed());
     }
 
+    private static void reverseTest(){
+        Volvo240 volvoReverse = new Volvo240();
+        volvoReverse.gas(-1);
+        System.out.println("Reverse speed: "+volvoReverse.getCurrentSpeed());
+    }
+
 
     /** tests the coordinates of the car on x and y-axis
     *   moves the car by an amount based on its relative speed
@@ -50,6 +56,7 @@ public class CarTest {
     static void main() {
         testTurbo();
         carPointLocation();
+        reverseTest();
         //TODO: add and run more test
     }
 }
