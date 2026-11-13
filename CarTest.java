@@ -20,8 +20,13 @@ public class CarTest {
 
     private static void reverseTest(){
         Volvo240 volvoReverse = new Volvo240();
-        volvoReverse.gas(-1);
-        System.out.println("Reverse speed: "+volvoReverse.getCurrentSpeed());
+        volvoReverse.gas(0);
+        if (volvoReverse.getCurrentSpeed() == -1){
+            System.out.println("Invalid gas value");
+        }
+        else {
+            System.out.println("Reverse speed: " + volvoReverse.getCurrentSpeed());
+        }
     }
 
 
@@ -36,7 +41,7 @@ public class CarTest {
         volvo.gas(1);
         System.out.println("Volvo Facing North," + " x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
 
-        for (int i = 0; i < 5; i++) ;
+        for(int i = 0; i < 4; i++)
         {
             volvo.turnLeft();
             volvo.move();
@@ -46,7 +51,7 @@ public class CarTest {
         saab.gas(1);
         System.out.println("Saab Facing North," + " x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             saab.turnRight();
             saab.move();
             System.out.println("x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
@@ -57,6 +62,7 @@ public class CarTest {
         testTurbo();
         carPointLocation();
         reverseTest();
+
         //TODO: add and run more test
     }
 }

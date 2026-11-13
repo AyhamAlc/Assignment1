@@ -36,11 +36,15 @@ public abstract class Car implements Movable {
         return nrDoors;
     }
     public double getEnginePower() {
-        return enginePower;
+        if (currentSpeed == 0)
+        {
+            return -1;
+        }
+        else {
+            return enginePower;
+        }
     }
-    public double getCurrentSpeed() {
-        return currentSpeed;
-    }
+    public double getCurrentSpeed() {return currentSpeed;};
     public Color getColor() { return color; }
     public void setColor(Color clr) { color = clr; }
     public void startEngine() { currentSpeed = 0.1; }
@@ -62,7 +66,13 @@ public abstract class Car implements Movable {
 
     // public because this is how a user would change the speed of the car
     public void gas(double amount) {
-        incrementSpeed(amount);
+        if(amount < 0.0 || amount > 1){
+            System.out.println("NOOOO");
+        }
+        else {
+            System.out.println("YEEEEES");
+            incrementSpeed(amount);
+        }
     }
     public void brake(double amount) {
         decrementSpeed(amount);
