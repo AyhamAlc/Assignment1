@@ -23,39 +23,28 @@ public class CarTest {
     *   moves the car by an amount based on its relative speed
     * */
 
-    private static void carPointLocation(){
+    private static void carPointLocation() {
         Volvo240 volvo = new Volvo240();
         Saab95 saab = new Saab95();
         volvo.startEngine();
         volvo.gas(1);
         System.out.println("Volvo Facing North," + " x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
-        volvo.turnLeft();
-        volvo.move();
-        System.out.println("x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
-        volvo.turnLeft();
-        volvo.move();
-        System.out.println("x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
-        volvo.turnLeft();
-        volvo.move();
-        System.out.println("x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
-        volvo.turnLeft();
-        volvo.move();
-        System.out.println("x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
+
+        for (int i = 0; i < 5; i++) ;
+        {
+            volvo.turnLeft();
+            volvo.move();
+            System.out.println("x position = " + volvo.getPosX() + "," + " y position = " + volvo.getPosY());
+        }
         saab.startEngine();
         saab.gas(1);
         System.out.println("Saab Facing North," + " x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
-        saab.turnRight();
-        saab.move();
-        System.out.println("x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
-        saab.turnRight();
-        saab.move();
-        System.out.println("x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
-        saab.turnRight();
-        saab.move();
-        System.out.println("x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
-        saab.turnRight();
-        saab.move();
-        System.out.println("x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
+
+        for (int i = 0; i < 5; i++) {
+            saab.turnRight();
+            saab.move();
+            System.out.println("x position = " + saab.getPosX() + "," + " y position = " + saab.getPosY());
+        }
     }
 
     static void main() {
